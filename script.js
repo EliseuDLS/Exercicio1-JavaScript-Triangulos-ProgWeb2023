@@ -2,33 +2,36 @@
 
 function triangulos(){
 
-    const lado1 = document.getElementById("lado1")
-    const lado2 = document.getElementById("lado2")
-    const lado3 = document.getElementById("lado1")
+    const lado1 = document.getElementById("inLado1");
+    const lado2 = document.getElementById("inLado2");
+    const lado3 = document.getElementById("inLado3");
+    const resp1 = document.querySelector("h3");
+    const resp2 = document.querySelector("h4");
     
-    const valor1 = Number(lado1.value)
-    const valor2 = Number(lado2.value)
-    const valor3 = Number(lado3.value)
-    
+    const valor1 = Number(lado1.value);
+    const valor2 = Number(lado2.value);
+    const valor3 = Number(lado3.value);
+
     if (valor1 < (valor2 + valor3) && valor2 < (valor1 + valor3) && valor3 < (valor1 + valor2)){    
-        resp.textContent = "Pode formar um triângulo";
-        resp.style.color = "black";
-    } 
-        else if (valor1 == valor2 && valor1 == valor3 && valor2 == valor3){
-            resp.textContent = "Triângulo Equilátero";
-            resp.style.color = "red";
+        resp1.innerText = "Pode formar um triângulo";
+        resp1.style.color = "black";
+    
+        if (valor1 == valor2 && valor1 == valor3 && valor2 == valor3){
+            resp2.innerText = "Triângulo Equilátero";
+            resp2.style.color = "red";
         } else if (valor1 == valor2 || valor1 == valor3 || valor2 == valor3){
-            resp.textContent = "Triângulo Isósceles";
-            resp.style.color = "blue";
+            resp2.innerText = "Triângulo Isósceles";
+            resp2.style.color = "blue";
         } else if (valor1 != valor2 && valor1 != valor3 && valor2 != valor3){
-            resp.textContent = "Triângulo Escaleno";
-            resp.style.color = "green";
+            resp2.innerText = "Triângulo Escaleno";
+            resp2.style.color = "green";
         }
-    else {
-        resp.textContent = "Não pode formar um triângulo";
-        resp.style.color = "black";
+        
+    } else {
+        resp1.innerText = "Não pode formar um triângulo";
+        resp1.style.color = "black";
     }
 }
     
-var butao = document.getElementById("butao")
-butao.addEventListener("click", triangulos)
+var botao = document.getElementById("botao")
+botao.addEventListener("click", triangulos)
