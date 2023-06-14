@@ -1,1 +1,1 @@
-# Exercicios-JavaScript-ProgWeb
+# Exercicio1-JavaScript-Triangulos-ProgWeb
